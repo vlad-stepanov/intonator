@@ -1,0 +1,21 @@
+streamlit==1.19.0
+torch==2.1.0
+transformers==4.32.0
+librosa==0.10.0
+sounddevice==0.4.4
+pandas==2.0.3
+moviepy==1.0.3
+webrtcvad==2.0.10
+matplotlib==3.7.0
+
+
+# torch==1.10.0
+# transformers==4.15.0
+# librosa==0.8.1
+# moviepy==1.0.3
+# webrtcvad==2.0.10
+# numpy==1.21.2
+# sounddevice==0.4.1
+# pandas==1.3.3
+# streamlit==1.7.0
+# matplotlib==3.4.3
