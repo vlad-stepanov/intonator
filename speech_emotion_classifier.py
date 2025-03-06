@@ -27,25 +27,6 @@ class SpeechEmotionClassifier:
         self.model.eval()
         self.label_map = label_map
 
-    def test_on_dataset(self):
-            import random
-            # Рандомно выбираем индекс из тестового датасета
-            idx = random.randrange(0, len(self.test_dataset))
-
-            st.write('Исходный класс дорожки:', INVERSE_LABEL_MAP[int(self.test_dataset.iloc[idx]['labels'])])
-
-            # Извлекаем входные значения для аудиосэмпла и перемещаем его на Cuda
-            input_values = self.test_dataset.iloc[idx]['input_values'].unsqueeze(0).to('cuda')
-
-            # Запускаем модель и получаем предсказания
-            with torch.no_grad():
-                outputs = self.classifier.model(input_values)
-            logits = outputs.logits
-
-            # Получаем предсказанный класс
-            predicted_class = logits.argmax(dim=-1).item()
-            st.write('Предсказанный класс дорожки:', INVERSE_LABEL_MAP[predicted_class])
-
     def classify_audio(self, audio_path: str) -> str:
         
         # Загружаем аудио
