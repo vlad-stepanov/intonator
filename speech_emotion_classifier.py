@@ -4,17 +4,6 @@ import librosa
 from transformers import Wav2Vec2Processor, Wav2Vec2ForSequenceClassification
 import streamlit as st
 
-# Словарь классов
-INVERSE_LABEL_MAP = {
-    0: "angry",
-    1: "happy",
-    2: "sad",
-    3: "neutral",
-    4: "fearful",
-    5: "disgusted",
-    6: "surprised"
-}
-
 device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 
 class SpeechEmotionClassifier:
